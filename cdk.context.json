@@ -1,0 +1,10 @@
+{
+    "@aws-cdk/core:enableStackNameDuplicates": "true",
+    "aws-cdk:enableDiffNoFail": "true",
+    "ecr_repo": "container-devsecops",
+    "codecommit_repo": "container-devsecops",
+    "codecommit_branch": "master",
+    "codebuild_project": "container-devsecops",
+    "codepipeline_name": "container-devsecops",
+    "notifications_email": ""
+}

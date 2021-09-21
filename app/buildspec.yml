@@ -1,0 +1,68 @@
+# version: 0.2
+
+# phases:
+#   pre_build:
+#     commands:
+#     - echo "Installing truffleHog"
+#     - which pip3 && pip3 --version
+#     - which python3 && python3 --version
+#     - pip3 install 'truffleHog>=2.1.0,<3.0'
+#   build:
+#     commands:
+#     - echo "Build started on $(date)"
+#     - echo "Scanning with truffleHog..."
+#     - trufflehog --regex --rules secrets_config.json --entropy=False "$APP_REPO_URL"
+#   post_build:
+#     commands:
+#     - echo "Build completed on $(date)"
+
+version: 0.2
+
+phases:
+  pre_build:
+    commands:
+    # Loging in to Amazon ECR private and public repositories
+    - echo Logging in to Amazon ECR...
+    - aws ecr-public get-login-password --region ${AWS_DEFAULT_REGION} | docker login --username AWS --password-stdin public.ecr.aws
+    - aws ecr get-login-password --region ${AWS_DEFAULT_REGION} | docker login --username AWS --password-stdin ${AWS_ACCOUNT_ID}.dkr.ecr.${AWS_DEFAULT_REGION}.amazonaws.com
+    - IMAGE_TAG=$(echo $CODEBUILD_RESOLVED_SOURCE_VERSION | cut -c 1-7)
+  build:
+    commands:
+    ### Scan ### hadolint  
+    - echo Using Hadolint for Dockerfile linting
+    - docker pull hadolint/hadolint:v2.7.0
+    - docker run --rm -i -v ${PWD}/.hadolint.yml:/.hadolint.yaml hadolint/hadolint:v2.7.0 hadolint -f json - < ./Dockerfile
+    - echo DOCKER FILE LINT STATGE - PASSED
+    # Build the Docker image
+    - docker build -f Dockerfile -t ${ECR_REPOSITORY_URI}:latest .
+    - docker tag ${ECR_REPOSITORY_URI}:latest ${ECR_REPOSITORY_URI}:${IMAGE_TAG}
+    ### Deep Vulnerability Scan ### ANCHORE
+    - export COMPOSE_INTERACTIVE_NO_CLI=1
+    - curl -s https://ci-tools.anchore.io/inline_scan-v0.10.1 | bash -s -- ${ECR_REPOSITORY_URI}:${IMAGE_TAG}
+    ### Snyk scan ###
+    - npm install -g snyk
+    - snyk config set api=${SNYK_AUTH}
+    - pip install -r requirements.txt
+    - snyk test
+    ### truffleHog secret scan ###
+    - pip3 install 'truffleHog>=2.1.0,<3.0'
+    - trufflehog --regex --rules trufflehog.json --entropy=False "$APP_REPO_URL"
+    post_build:
+    commands:
+    - bash -c "if [ /"$CODEBUILD_BUILD_SUCCEEDING/" == /"0/" ]; then exit 1; fi"
+    - echo Build completed on `date`
+    # Pushing the Docker images
+    - docker push ${ECR_REPOSITORY_URI}:latest
+    - docker push ${ECR_REPOSITORY_URI}:$IMAGE_TAG
+    # Amazon ECR image scan results for HIGH/CRITICAL vulnerabilities
+    - |
+      while [ "${CURRENT_STATUS^^}" != "COMPLETE" ]; do
+        sleep 3;
+        CURRENT_STATUS=$(aws ecr describe-image-scan-findings --repository-name my-ecr-repo --image-id imageTag=$IMAGE_TAG | jq -r .imageScanStatus.status);
+      done;
+    - echo Current ECR scan status is: $CURRENT_STATUS
+    # Writing image definitions file...
+    - printf '[{"name":"MyWebsite","imageUri":"%s"}]' ${ECR_REPOSITORY_URI}:${IMAGE_TAG} > imagedefinitions.json
+    - cat imagedefinitions.json
+artifacts:
+  files: imagedefinitions.json

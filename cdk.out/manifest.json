@@ -1,0 +1,571 @@
+{
+  "version": "14.0.0",
+  "artifacts": {
+    "Tree": {
+      "type": "cdk:tree",
+      "properties": {
+        "file": "tree.json"
+      }
+    },
+    "ContainerDevSecOpsStack": {
+      "type": "aws:cloudformation:stack",
+      "environment": "aws://unknown-account/us-east-1",
+      "properties": {
+        "templateFile": "ContainerDevSecOpsStack.template.json",
+        "validateOnSynth": false
+      },
+      "metadata": {
+        "/ContainerDevSecOpsStack/ImageRepo/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ImageRepoD50AF4EB",
+            "trace": [
+              "new Repository (/Users/scottlwk/Github/container-security-devsecops/node_modules/@aws-cdk/aws-ecr/lib/repository.ts:320:22)",
+              "new PipelineStack (/Users/scottlwk/Github/container-security-devsecops/lib/pipeline-stack.ts:28:27)",
+              "Object.<anonymous> (/Users/scottlwk/Github/container-security-devsecops/bin/cdk.ts:9:1)",
+              "Module._compile (internal/modules/cjs/loader.js:1063:30)",
+              "Module.m._compile (/Users/scottlwk/Github/container-security-devsecops/node_modules/ts-node/src/index.ts:858:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:1092:10)",
+              "Object.require.extensions.<computed> [as .ts] (/Users/scottlwk/Github/container-security-devsecops/node_modules/ts-node/src/index.ts:861:12)",
+              "Module.load (internal/modules/cjs/loader.js:928:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:769:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:72:12)",
+              "main (/Users/scottlwk/Github/container-security-devsecops/node_modules/ts-node/src/bin.ts:227:14)",
+              "Object.<anonymous> (/Users/scottlwk/Github/container-security-devsecops/node_modules/ts-node/src/bin.ts:513:3)",
+              "Module._compile (internal/modules/cjs/loader.js:1063:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:1092:10)",
+              "Module.load (internal/modules/cjs/loader.js:928:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:769:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:72:12)",
+              "internal/main/run_main_module.js:17:47"
+            ]
+          }
+        ],
+        "/ContainerDevSecOpsStack/SourceRepo/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SourceRepo18235FA1",
+            "trace": [
+              "new Repository (/Users/scottlwk/Github/container-security-devsecops/node_modules/@aws-cdk/aws-codecommit/lib/repository.ts:410:24)",
+              "new PipelineStack (/Users/scottlwk/Github/container-security-devsecops/lib/pipeline-stack.ts:36:34)",
+              "Object.<anonymous> (/Users/scottlwk/Github/container-security-devsecops/bin/cdk.ts:9:1)",
+              "Module._compile (internal/modules/cjs/loader.js:1063:30)",
+              "Module.m._compile (/Users/scottlwk/Github/container-security-devsecops/node_modules/ts-node/src/index.ts:858:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:1092:10)",
+              "Object.require.extensions.<computed> [as .ts] (/Users/scottlwk/Github/container-security-devsecops/node_modules/ts-node/src/index.ts:861:12)",
+              "Module.load (internal/modules/cjs/loader.js:928:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:769:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:72:12)",
+              "main (/Users/scottlwk/Github/container-security-devsecops/node_modules/ts-node/src/bin.ts:227:14)",
+              "Object.<anonymous> (/Users/scottlwk/Github/container-security-devsecops/node_modules/ts-node/src/bin.ts:513:3)",
+              "Module._compile (internal/modules/cjs/loader.js:1063:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:1092:10)",
+              "Module.load (internal/modules/cjs/loader.js:928:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:769:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:72:12)",
+              "internal/main/run_main_module.js:17:47"
+            ]
+          }
+        ],
+        "/ContainerDevSecOpsStack/Build/Role/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "BuildRoleB7C66CB2",
+            "trace": [
+              "new Role (/Users/scottlwk/Github/container-security-devsecops/node_modules/@aws-cdk/aws-iam/lib/role.ts:199:18)",
+              "new Project (/Users/scottlwk/Github/container-security-devsecops/node_modules/@aws-cdk/aws-codebuild/lib/project.ts:639:31)",
+              "new PipelineProject (/Users/scottlwk/Github/container-security-devsecops/node_modules/@aws-cdk/aws-codebuild/lib/pipeline-project.ts:12:5)",
+              "new PipelineStack (/Users/scottlwk/Github/container-security-devsecops/lib/pipeline-stack.ts:46:30)",
+              "Object.<anonymous> (/Users/scottlwk/Github/container-security-devsecops/bin/cdk.ts:9:1)",
+              "Module._compile (internal/modules/cjs/loader.js:1063:30)",
+              "Module.m._compile (/Users/scottlwk/Github/container-security-devsecops/node_modules/ts-node/src/index.ts:858:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:1092:10)",
+              "Object.require.extensions.<computed> [as .ts] (/Users/scottlwk/Github/container-security-devsecops/node_modules/ts-node/src/index.ts:861:12)",
+              "Module.load (internal/modules/cjs/loader.js:928:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:769:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:72:12)",
+              "main (/Users/scottlwk/Github/container-security-devsecops/node_modules/ts-node/src/bin.ts:227:14)",
+              "Object.<anonymous> (/Users/scottlwk/Github/container-security-devsecops/node_modules/ts-node/src/bin.ts:513:3)",
+              "Module._compile (internal/modules/cjs/loader.js:1063:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:1092:10)",
+              "Module.load (internal/modules/cjs/loader.js:928:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:769:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:72:12)",
+              "internal/main/run_main_module.js:17:47"
+            ]
+          }
+        ],
+        "/ContainerDevSecOpsStack/Build/Role/DefaultPolicy/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "BuildRoleDefaultPolicyEAC4E6D6",
+            "trace": [
+              "new Policy (/Users/scottlwk/Github/container-security-devsecops/node_modules/@aws-cdk/aws-iam/lib/policy.ts:89:22)",
+              "Role.addToPrincipalPolicy (/Users/scottlwk/Github/container-security-devsecops/node_modules/@aws-cdk/aws-iam/lib/role.ts:236:28)",
+              "Function.serializeEnvVariables (/Users/scottlwk/Github/container-security-devsecops/node_modules/@aws-cdk/aws-codebuild/lib/project.ts:599:33)",
+              "PipelineProject.renderEnvironment (/Users/scottlwk/Github/container-security-devsecops/node_modules/@aws-cdk/aws-codebuild/lib/project.ts:931:19)",
+              "new Project (/Users/scottlwk/Github/container-security-devsecops/node_modules/@aws-cdk/aws-codebuild/lib/project.ts:700:25)",
+              "new PipelineProject (/Users/scottlwk/Github/container-security-devsecops/node_modules/@aws-cdk/aws-codebuild/lib/pipeline-project.ts:12:5)",
+              "new PipelineStack (/Users/scottlwk/Github/container-security-devsecops/lib/pipeline-stack.ts:46:30)",
+              "Object.<anonymous> (/Users/scottlwk/Github/container-security-devsecops/bin/cdk.ts:9:1)",
+              "Module._compile (internal/modules/cjs/loader.js:1063:30)",
+              "Module.m._compile (/Users/scottlwk/Github/container-security-devsecops/node_modules/ts-node/src/index.ts:858:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:1092:10)",
+              "Object.require.extensions.<computed> [as .ts] (/Users/scottlwk/Github/container-security-devsecops/node_modules/ts-node/src/index.ts:861:12)",
+              "Module.load (internal/modules/cjs/loader.js:928:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:769:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:72:12)",
+              "main (/Users/scottlwk/Github/container-security-devsecops/node_modules/ts-node/src/bin.ts:227:14)",
+              "Object.<anonymous> (/Users/scottlwk/Github/container-security-devsecops/node_modules/ts-node/src/bin.ts:513:3)",
+              "Module._compile (internal/modules/cjs/loader.js:1063:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:1092:10)",
+              "Module.load (internal/modules/cjs/loader.js:928:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:769:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:72:12)",
+              "internal/main/run_main_module.js:17:47"
+            ]
+          }
+        ],
+        "/ContainerDevSecOpsStack/Build/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "Build45A36621",
+            "trace": [
+              "new Project (/Users/scottlwk/Github/container-security-devsecops/node_modules/@aws-cdk/aws-codebuild/lib/project.ts:692:22)",
+              "new PipelineProject (/Users/scottlwk/Github/container-security-devsecops/node_modules/@aws-cdk/aws-codebuild/lib/pipeline-project.ts:12:5)",
+              "new PipelineStack (/Users/scottlwk/Github/container-security-devsecops/lib/pipeline-stack.ts:46:30)",
+              "Object.<anonymous> (/Users/scottlwk/Github/container-security-devsecops/bin/cdk.ts:9:1)",
+              "Module._compile (internal/modules/cjs/loader.js:1063:30)",
+              "Module.m._compile (/Users/scottlwk/Github/container-security-devsecops/node_modules/ts-node/src/index.ts:858:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:1092:10)",
+              "Object.require.extensions.<computed> [as .ts] (/Users/scottlwk/Github/container-security-devsecops/node_modules/ts-node/src/index.ts:861:12)",
+              "Module.load (internal/modules/cjs/loader.js:928:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:769:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:72:12)",
+              "main (/Users/scottlwk/Github/container-security-devsecops/node_modules/ts-node/src/bin.ts:227:14)",
+              "Object.<anonymous> (/Users/scottlwk/Github/container-security-devsecops/node_modules/ts-node/src/bin.ts:513:3)",
+              "Module._compile (internal/modules/cjs/loader.js:1063:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:1092:10)",
+              "Module.load (internal/modules/cjs/loader.js:928:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:769:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:72:12)",
+              "internal/main/run_main_module.js:17:47"
+            ]
+          }
+        ],
+        "/ContainerDevSecOpsStack/Pipeline/ArtifactsBucketEncryptionKey/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "PipelineArtifactsBucketEncryptionKey01D58D69",
+            "trace": [
+              "new Key (/Users/scottlwk/Github/container-security-devsecops/node_modules/@aws-cdk/aws-kms/lib/key.ts:439:22)",
+              "new Pipeline (/Users/scottlwk/Github/container-security-devsecops/node_modules/@aws-cdk/aws-codepipeline/lib/pipeline.ts:233:25)",
+              "new PipelineStack (/Users/scottlwk/Github/container-security-devsecops/lib/pipeline-stack.ts:134:22)",
+              "Object.<anonymous> (/Users/scottlwk/Github/container-security-devsecops/bin/cdk.ts:9:1)",
+              "Module._compile (internal/modules/cjs/loader.js:1063:30)",
+              "Module.m._compile (/Users/scottlwk/Github/container-security-devsecops/node_modules/ts-node/src/index.ts:858:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:1092:10)",
+              "Object.require.extensions.<computed> [as .ts] (/Users/scottlwk/Github/container-security-devsecops/node_modules/ts-node/src/index.ts:861:12)",
+              "Module.load (internal/modules/cjs/loader.js:928:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:769:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:72:12)",
+              "main (/Users/scottlwk/Github/container-security-devsecops/node_modules/ts-node/src/bin.ts:227:14)",
+              "Object.<anonymous> (/Users/scottlwk/Github/container-security-devsecops/node_modules/ts-node/src/bin.ts:513:3)",
+              "Module._compile (internal/modules/cjs/loader.js:1063:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:1092:10)",
+              "Module.load (internal/modules/cjs/loader.js:928:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:769:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:72:12)",
+              "internal/main/run_main_module.js:17:47"
+            ]
+          }
+        ],
+        "/ContainerDevSecOpsStack/Pipeline/ArtifactsBucketEncryptionKeyAlias/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "PipelineArtifactsBucketEncryptionKeyAlias5C510EEE",
+            "trace": [
+              "new Alias (/Users/scottlwk/Github/container-security-devsecops/node_modules/@aws-cdk/aws-kms/lib/alias.ts:143:22)",
+              "new Pipeline (/Users/scottlwk/Github/container-security-devsecops/node_modules/@aws-cdk/aws-codepipeline/lib/pipeline.ts:239:9)",
+              "new PipelineStack (/Users/scottlwk/Github/container-security-devsecops/lib/pipeline-stack.ts:134:22)",
+              "Object.<anonymous> (/Users/scottlwk/Github/container-security-devsecops/bin/cdk.ts:9:1)",
+              "Module._compile (internal/modules/cjs/loader.js:1063:30)",
+              "Module.m._compile (/Users/scottlwk/Github/container-security-devsecops/node_modules/ts-node/src/index.ts:858:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:1092:10)",
+              "Object.require.extensions.<computed> [as .ts] (/Users/scottlwk/Github/container-security-devsecops/node_modules/ts-node/src/index.ts:861:12)",
+              "Module.load (internal/modules/cjs/loader.js:928:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:769:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:72:12)",
+              "main (/Users/scottlwk/Github/container-security-devsecops/node_modules/ts-node/src/bin.ts:227:14)",
+              "Object.<anonymous> (/Users/scottlwk/Github/container-security-devsecops/node_modules/ts-node/src/bin.ts:513:3)",
+              "Module._compile (internal/modules/cjs/loader.js:1063:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:1092:10)",
+              "Module.load (internal/modules/cjs/loader.js:928:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:769:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:72:12)",
+              "internal/main/run_main_module.js:17:47"
+            ]
+          }
+        ],
+        "/ContainerDevSecOpsStack/Pipeline/ArtifactsBucket/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "PipelineArtifactsBucket22248F97",
+            "trace": [
+              "new Bucket (/Users/scottlwk/Github/container-security-devsecops/node_modules/@aws-cdk/aws-s3/lib/bucket.ts:713:22)",
+              "new Pipeline (/Users/scottlwk/Github/container-security-devsecops/node_modules/@aws-cdk/aws-codepipeline/lib/pipeline.ts:246:21)",
+              "new PipelineStack (/Users/scottlwk/Github/container-security-devsecops/lib/pipeline-stack.ts:134:22)",
+              "Object.<anonymous> (/Users/scottlwk/Github/container-security-devsecops/bin/cdk.ts:9:1)",
+              "Module._compile (internal/modules/cjs/loader.js:1063:30)",
+              "Module.m._compile (/Users/scottlwk/Github/container-security-devsecops/node_modules/ts-node/src/index.ts:858:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:1092:10)",
+              "Object.require.extensions.<computed> [as .ts] (/Users/scottlwk/Github/container-security-devsecops/node_modules/ts-node/src/index.ts:861:12)",
+              "Module.load (internal/modules/cjs/loader.js:928:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:769:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:72:12)",
+              "main (/Users/scottlwk/Github/container-security-devsecops/node_modules/ts-node/src/bin.ts:227:14)",
+              "Object.<anonymous> (/Users/scottlwk/Github/container-security-devsecops/node_modules/ts-node/src/bin.ts:513:3)",
+              "Module._compile (internal/modules/cjs/loader.js:1063:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:1092:10)",
+              "Module.load (internal/modules/cjs/loader.js:928:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:769:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:72:12)",
+              "internal/main/run_main_module.js:17:47"
+            ]
+          }
+        ],
+        "/ContainerDevSecOpsStack/Pipeline/Role/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "PipelineRoleD68726F7",
+            "trace": [
+              "new Role (/Users/scottlwk/Github/container-security-devsecops/node_modules/@aws-cdk/aws-iam/lib/role.ts:199:18)",
+              "new Pipeline (/Users/scottlwk/Github/container-security-devsecops/node_modules/@aws-cdk/aws-codepipeline/lib/pipeline.ts:257:31)",
+              "new PipelineStack (/Users/scottlwk/Github/container-security-devsecops/lib/pipeline-stack.ts:134:22)",
+              "Object.<anonymous> (/Users/scottlwk/Github/container-security-devsecops/bin/cdk.ts:9:1)",
+              "Module._compile (internal/modules/cjs/loader.js:1063:30)",
+              "Module.m._compile (/Users/scottlwk/Github/container-security-devsecops/node_modules/ts-node/src/index.ts:858:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:1092:10)",
+              "Object.require.extensions.<computed> [as .ts] (/Users/scottlwk/Github/container-security-devsecops/node_modules/ts-node/src/index.ts:861:12)",
+              "Module.load (internal/modules/cjs/loader.js:928:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:769:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:72:12)",
+              "main (/Users/scottlwk/Github/container-security-devsecops/node_modules/ts-node/src/bin.ts:227:14)",
+              "Object.<anonymous> (/Users/scottlwk/Github/container-security-devsecops/node_modules/ts-node/src/bin.ts:513:3)",
+              "Module._compile (internal/modules/cjs/loader.js:1063:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:1092:10)",
+              "Module.load (internal/modules/cjs/loader.js:928:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:769:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:72:12)",
+              "internal/main/run_main_module.js:17:47"
+            ]
+          }
+        ],
+        "/ContainerDevSecOpsStack/Pipeline/Role/DefaultPolicy/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "PipelineRoleDefaultPolicyC7A05455",
+            "trace": [
+              "new Policy (/Users/scottlwk/Github/container-security-devsecops/node_modules/@aws-cdk/aws-iam/lib/policy.ts:89:22)",
+              "Role.addToPrincipalPolicy (/Users/scottlwk/Github/container-security-devsecops/node_modules/@aws-cdk/aws-iam/lib/role.ts:236:28)",
+              "Function.addToPrincipal (/Users/scottlwk/Github/container-security-devsecops/node_modules/@aws-cdk/aws-iam/lib/grant.ts:92:61)",
+              "Function.addToPrincipalOrResource (/Users/scottlwk/Github/container-security-devsecops/node_modules/@aws-cdk/aws-iam/lib/grant.ts:48:26)",
+              "Bucket.grant (/Users/scottlwk/Github/container-security-devsecops/node_modules/@aws-cdk/aws-s3/lib/bucket.ts:383:27)",
+              "Bucket.grantReadWrite (/Users/scottlwk/Github/container-security-devsecops/node_modules/@aws-cdk/aws-s3/lib/bucket.ts:313:17)",
+              "new Pipeline (/Users/scottlwk/Github/container-security-devsecops/node_modules/@aws-cdk/aws-codepipeline/lib/pipeline.ts:273:25)",
+              "new PipelineStack (/Users/scottlwk/Github/container-security-devsecops/lib/pipeline-stack.ts:134:22)",
+              "Object.<anonymous> (/Users/scottlwk/Github/container-security-devsecops/bin/cdk.ts:9:1)",
+              "Module._compile (internal/modules/cjs/loader.js:1063:30)",
+              "Module.m._compile (/Users/scottlwk/Github/container-security-devsecops/node_modules/ts-node/src/index.ts:858:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:1092:10)",
+              "Object.require.extensions.<computed> [as .ts] (/Users/scottlwk/Github/container-security-devsecops/node_modules/ts-node/src/index.ts:861:12)",
+              "Module.load (internal/modules/cjs/loader.js:928:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:769:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:72:12)",
+              "main (/Users/scottlwk/Github/container-security-devsecops/node_modules/ts-node/src/bin.ts:227:14)",
+              "Object.<anonymous> (/Users/scottlwk/Github/container-security-devsecops/node_modules/ts-node/src/bin.ts:513:3)",
+              "Module._compile (internal/modules/cjs/loader.js:1063:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:1092:10)",
+              "Module.load (internal/modules/cjs/loader.js:928:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:769:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:72:12)",
+              "internal/main/run_main_module.js:17:47"
+            ]
+          }
+        ],
+        "/ContainerDevSecOpsStack/Pipeline/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "PipelineC660917D",
+            "trace": [
+              "new Pipeline (/Users/scottlwk/Github/container-security-devsecops/node_modules/@aws-cdk/aws-codepipeline/lib/pipeline.ts:261:26)",
+              "new PipelineStack (/Users/scottlwk/Github/container-security-devsecops/lib/pipeline-stack.ts:134:22)",
+              "Object.<anonymous> (/Users/scottlwk/Github/container-security-devsecops/bin/cdk.ts:9:1)",
+              "Module._compile (internal/modules/cjs/loader.js:1063:30)",
+              "Module.m._compile (/Users/scottlwk/Github/container-security-devsecops/node_modules/ts-node/src/index.ts:858:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:1092:10)",
+              "Object.require.extensions.<computed> [as .ts] (/Users/scottlwk/Github/container-security-devsecops/node_modules/ts-node/src/index.ts:861:12)",
+              "Module.load (internal/modules/cjs/loader.js:928:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:769:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:72:12)",
+              "main (/Users/scottlwk/Github/container-security-devsecops/node_modules/ts-node/src/bin.ts:227:14)",
+              "Object.<anonymous> (/Users/scottlwk/Github/container-security-devsecops/node_modules/ts-node/src/bin.ts:513:3)",
+              "Module._compile (internal/modules/cjs/loader.js:1063:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:1092:10)",
+              "Module.load (internal/modules/cjs/loader.js:928:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:769:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:72:12)",
+              "internal/main/run_main_module.js:17:47"
+            ]
+          }
+        ],
+        "/ContainerDevSecOpsStack/Pipeline/Source/Source-CodeCommit/CodePipelineActionRole/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "PipelineSourceSourceCodeCommitCodePipelineActionRole5E2D9CBE",
+            "trace": [
+              "new Role (/Users/scottlwk/Github/container-security-devsecops/node_modules/@aws-cdk/aws-iam/lib/role.ts:199:18)",
+              "Pipeline.getRoleForAction (/Users/scottlwk/Github/container-security-devsecops/node_modules/@aws-cdk/aws-codepipeline/lib/pipeline.ts:522:20)",
+              "Pipeline._attachActionToPipeline (/Users/scottlwk/Github/container-security-devsecops/node_modules/@aws-cdk/aws-codepipeline/lib/pipeline.ts:356:29)",
+              "Stage.attachActionToPipeline (/Users/scottlwk/Github/container-security-devsecops/node_modules/@aws-cdk/aws-codepipeline/lib/private/stage.ts:155:27)",
+              "Stage.addAction (/Users/scottlwk/Github/container-security-devsecops/node_modules/@aws-cdk/aws-codepipeline/lib/private/stage.ts:93:29)",
+              "new Stage (/Users/scottlwk/Github/container-security-devsecops/node_modules/@aws-cdk/aws-codepipeline/lib/private/stage.ts:40:12)",
+              "Pipeline.addStage (/Users/scottlwk/Github/container-security-devsecops/node_modules/@aws-cdk/aws-codepipeline/lib/pipeline.ts:303:19)",
+              "new PipelineStack (/Users/scottlwk/Github/container-security-devsecops/lib/pipeline-stack.ts:137:14)",
+              "Object.<anonymous> (/Users/scottlwk/Github/container-security-devsecops/bin/cdk.ts:9:1)",
+              "Module._compile (internal/modules/cjs/loader.js:1063:30)",
+              "Module.m._compile (/Users/scottlwk/Github/container-security-devsecops/node_modules/ts-node/src/index.ts:858:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:1092:10)",
+              "Object.require.extensions.<computed> [as .ts] (/Users/scottlwk/Github/container-security-devsecops/node_modules/ts-node/src/index.ts:861:12)",
+              "Module.load (internal/modules/cjs/loader.js:928:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:769:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:72:12)",
+              "main (/Users/scottlwk/Github/container-security-devsecops/node_modules/ts-node/src/bin.ts:227:14)",
+              "Object.<anonymous> (/Users/scottlwk/Github/container-security-devsecops/node_modules/ts-node/src/bin.ts:513:3)",
+              "Module._compile (internal/modules/cjs/loader.js:1063:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:1092:10)",
+              "Module.load (internal/modules/cjs/loader.js:928:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:769:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:72:12)",
+              "internal/main/run_main_module.js:17:47"
+            ]
+          }
+        ],
+        "/ContainerDevSecOpsStack/Pipeline/Source/Source-CodeCommit/CodePipelineActionRole/DefaultPolicy/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "PipelineSourceSourceCodeCommitCodePipelineActionRoleDefaultPolicy50FEBD5F",
+            "trace": [
+              "new Policy (/Users/scottlwk/Github/container-security-devsecops/node_modules/@aws-cdk/aws-iam/lib/policy.ts:89:22)",
+              "Role.addToPrincipalPolicy (/Users/scottlwk/Github/container-security-devsecops/node_modules/@aws-cdk/aws-iam/lib/role.ts:236:28)",
+              "Function.addToPrincipal (/Users/scottlwk/Github/container-security-devsecops/node_modules/@aws-cdk/aws-iam/lib/grant.ts:92:61)",
+              "Function.addToPrincipalOrResource (/Users/scottlwk/Github/container-security-devsecops/node_modules/@aws-cdk/aws-iam/lib/grant.ts:48:26)",
+              "Bucket.grant (/Users/scottlwk/Github/container-security-devsecops/node_modules/@aws-cdk/aws-s3/lib/bucket.ts:383:27)",
+              "Bucket.grantReadWrite (/Users/scottlwk/Github/container-security-devsecops/node_modules/@aws-cdk/aws-s3/lib/bucket.ts:313:17)",
+              "CodeCommitSourceAction.bound (/Users/scottlwk/Github/container-security-devsecops/node_modules/@aws-cdk/aws-codepipeline-actions/lib/codecommit/source-action.ts:131:20)",
+              "CodeCommitSourceAction.bind (/Users/scottlwk/Github/container-security-devsecops/node_modules/@aws-cdk/aws-codepipeline/lib/action.ts:234:17)",
+              "RichAction.bind (/Users/scottlwk/Github/container-security-devsecops/node_modules/@aws-cdk/aws-codepipeline/lib/private/rich-action.ts:30:24)",
+              "Pipeline._attachActionToPipeline (/Users/scottlwk/Github/container-security-devsecops/node_modules/@aws-cdk/aws-codepipeline/lib/pipeline.ts:362:37)",
+              "Stage.attachActionToPipeline (/Users/scottlwk/Github/container-security-devsecops/node_modules/@aws-cdk/aws-codepipeline/lib/private/stage.ts:155:27)",
+              "Stage.addAction (/Users/scottlwk/Github/container-security-devsecops/node_modules/@aws-cdk/aws-codepipeline/lib/private/stage.ts:93:29)",
+              "new Stage (/Users/scottlwk/Github/container-security-devsecops/node_modules/@aws-cdk/aws-codepipeline/lib/private/stage.ts:40:12)",
+              "Pipeline.addStage (/Users/scottlwk/Github/container-security-devsecops/node_modules/@aws-cdk/aws-codepipeline/lib/pipeline.ts:303:19)",
+              "new PipelineStack (/Users/scottlwk/Github/container-security-devsecops/lib/pipeline-stack.ts:137:14)",
+              "Object.<anonymous> (/Users/scottlwk/Github/container-security-devsecops/bin/cdk.ts:9:1)",
+              "Module._compile (internal/modules/cjs/loader.js:1063:30)",
+              "Module.m._compile (/Users/scottlwk/Github/container-security-devsecops/node_modules/ts-node/src/index.ts:858:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:1092:10)",
+              "Object.require.extensions.<computed> [as .ts] (/Users/scottlwk/Github/container-security-devsecops/node_modules/ts-node/src/index.ts:861:12)",
+              "Module.load (internal/modules/cjs/loader.js:928:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:769:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:72:12)",
+              "main (/Users/scottlwk/Github/container-security-devsecops/node_modules/ts-node/src/bin.ts:227:14)",
+              "Object.<anonymous> (/Users/scottlwk/Github/container-security-devsecops/node_modules/ts-node/src/bin.ts:513:3)",
+              "Module._compile (internal/modules/cjs/loader.js:1063:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:1092:10)",
+              "Module.load (internal/modules/cjs/loader.js:928:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:769:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:72:12)",
+              "internal/main/run_main_module.js:17:47"
+            ]
+          }
+        ],
+        "/ContainerDevSecOpsStack/Pipeline/Build/Build/CodePipelineActionRole/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "PipelineBuildCodePipelineActionRoleD77A08E6",
+            "trace": [
+              "new Role (/Users/scottlwk/Github/container-security-devsecops/node_modules/@aws-cdk/aws-iam/lib/role.ts:199:18)",
+              "Pipeline.getRoleForAction (/Users/scottlwk/Github/container-security-devsecops/node_modules/@aws-cdk/aws-codepipeline/lib/pipeline.ts:522:20)",
+              "Pipeline._attachActionToPipeline (/Users/scottlwk/Github/container-security-devsecops/node_modules/@aws-cdk/aws-codepipeline/lib/pipeline.ts:356:29)",
+              "Stage.attachActionToPipeline (/Users/scottlwk/Github/container-security-devsecops/node_modules/@aws-cdk/aws-codepipeline/lib/private/stage.ts:155:27)",
+              "Stage.addAction (/Users/scottlwk/Github/container-security-devsecops/node_modules/@aws-cdk/aws-codepipeline/lib/private/stage.ts:93:29)",
+              "new Stage (/Users/scottlwk/Github/container-security-devsecops/node_modules/@aws-cdk/aws-codepipeline/lib/private/stage.ts:40:12)",
+              "Pipeline.addStage (/Users/scottlwk/Github/container-security-devsecops/node_modules/@aws-cdk/aws-codepipeline/lib/pipeline.ts:303:19)",
+              "new PipelineStack (/Users/scottlwk/Github/container-security-devsecops/lib/pipeline-stack.ts:141:14)",
+              "Object.<anonymous> (/Users/scottlwk/Github/container-security-devsecops/bin/cdk.ts:9:1)",
+              "Module._compile (internal/modules/cjs/loader.js:1063:30)",
+              "Module.m._compile (/Users/scottlwk/Github/container-security-devsecops/node_modules/ts-node/src/index.ts:858:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:1092:10)",
+              "Object.require.extensions.<computed> [as .ts] (/Users/scottlwk/Github/container-security-devsecops/node_modules/ts-node/src/index.ts:861:12)",
+              "Module.load (internal/modules/cjs/loader.js:928:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:769:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:72:12)",
+              "main (/Users/scottlwk/Github/container-security-devsecops/node_modules/ts-node/src/bin.ts:227:14)",
+              "Object.<anonymous> (/Users/scottlwk/Github/container-security-devsecops/node_modules/ts-node/src/bin.ts:513:3)",
+              "Module._compile (internal/modules/cjs/loader.js:1063:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:1092:10)",
+              "Module.load (internal/modules/cjs/loader.js:928:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:769:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:72:12)",
+              "internal/main/run_main_module.js:17:47"
+            ]
+          }
+        ],
+        "/ContainerDevSecOpsStack/Pipeline/Build/Build/CodePipelineActionRole/DefaultPolicy/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "PipelineBuildCodePipelineActionRoleDefaultPolicyC9CB73F8",
+            "trace": [
+              "new Policy (/Users/scottlwk/Github/container-security-devsecops/node_modules/@aws-cdk/aws-iam/lib/policy.ts:89:22)",
+              "Role.addToPrincipalPolicy (/Users/scottlwk/Github/container-security-devsecops/node_modules/@aws-cdk/aws-iam/lib/role.ts:236:28)",
+              "Role.addToPolicy (/Users/scottlwk/Github/container-security-devsecops/node_modules/@aws-cdk/aws-iam/lib/role.ts:244:17)",
+              "CodeBuildAction.bound (/Users/scottlwk/Github/container-security-devsecops/node_modules/@aws-cdk/aws-codepipeline-actions/lib/codebuild/build-action.ts:90:18)",
+              "CodeBuildAction.bind (/Users/scottlwk/Github/container-security-devsecops/node_modules/@aws-cdk/aws-codepipeline/lib/action.ts:234:17)",
+              "RichAction.bind (/Users/scottlwk/Github/container-security-devsecops/node_modules/@aws-cdk/aws-codepipeline/lib/private/rich-action.ts:30:24)",
+              "Pipeline._attachActionToPipeline (/Users/scottlwk/Github/container-security-devsecops/node_modules/@aws-cdk/aws-codepipeline/lib/pipeline.ts:362:37)",
+              "Stage.attachActionToPipeline (/Users/scottlwk/Github/container-security-devsecops/node_modules/@aws-cdk/aws-codepipeline/lib/private/stage.ts:155:27)",
+              "Stage.addAction (/Users/scottlwk/Github/container-security-devsecops/node_modules/@aws-cdk/aws-codepipeline/lib/private/stage.ts:93:29)",
+              "new Stage (/Users/scottlwk/Github/container-security-devsecops/node_modules/@aws-cdk/aws-codepipeline/lib/private/stage.ts:40:12)",
+              "Pipeline.addStage (/Users/scottlwk/Github/container-security-devsecops/node_modules/@aws-cdk/aws-codepipeline/lib/pipeline.ts:303:19)",
+              "new PipelineStack (/Users/scottlwk/Github/container-security-devsecops/lib/pipeline-stack.ts:141:14)",
+              "Object.<anonymous> (/Users/scottlwk/Github/container-security-devsecops/bin/cdk.ts:9:1)",
+              "Module._compile (internal/modules/cjs/loader.js:1063:30)",
+              "Module.m._compile (/Users/scottlwk/Github/container-security-devsecops/node_modules/ts-node/src/index.ts:858:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:1092:10)",
+              "Object.require.extensions.<computed> [as .ts] (/Users/scottlwk/Github/container-security-devsecops/node_modules/ts-node/src/index.ts:861:12)",
+              "Module.load (internal/modules/cjs/loader.js:928:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:769:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:72:12)",
+              "main (/Users/scottlwk/Github/container-security-devsecops/node_modules/ts-node/src/bin.ts:227:14)",
+              "Object.<anonymous> (/Users/scottlwk/Github/container-security-devsecops/node_modules/ts-node/src/bin.ts:513:3)",
+              "Module._compile (internal/modules/cjs/loader.js:1063:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:1092:10)",
+              "Module.load (internal/modules/cjs/loader.js:928:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:769:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:72:12)",
+              "internal/main/run_main_module.js:17:47"
+            ]
+          }
+        ],
+        "/ContainerDevSecOpsStack/CodeCommitCloneUrlHttp": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CodeCommitCloneUrlHttp",
+            "trace": [
+              "new PipelineStack (/Users/scottlwk/Github/container-security-devsecops/lib/pipeline-stack.ts:168:5)",
+              "Object.<anonymous> (/Users/scottlwk/Github/container-security-devsecops/bin/cdk.ts:9:1)",
+              "Module._compile (internal/modules/cjs/loader.js:1063:30)",
+              "Module.m._compile (/Users/scottlwk/Github/container-security-devsecops/node_modules/ts-node/src/index.ts:858:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:1092:10)",
+              "Object.require.extensions.<computed> [as .ts] (/Users/scottlwk/Github/container-security-devsecops/node_modules/ts-node/src/index.ts:861:12)",
+              "Module.load (internal/modules/cjs/loader.js:928:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:769:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:72:12)",
+              "main (/Users/scottlwk/Github/container-security-devsecops/node_modules/ts-node/src/bin.ts:227:14)",
+              "Object.<anonymous> (/Users/scottlwk/Github/container-security-devsecops/node_modules/ts-node/src/bin.ts:513:3)",
+              "Module._compile (internal/modules/cjs/loader.js:1063:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:1092:10)",
+              "Module.load (internal/modules/cjs/loader.js:928:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:769:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:72:12)",
+              "internal/main/run_main_module.js:17:47"
+            ]
+          }
+        ],
+        "/ContainerDevSecOpsStack/CodeCommitCloneUrlSsh": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CodeCommitCloneUrlSsh",
+            "trace": [
+              "new PipelineStack (/Users/scottlwk/Github/container-security-devsecops/lib/pipeline-stack.ts:173:5)",
+              "Object.<anonymous> (/Users/scottlwk/Github/container-security-devsecops/bin/cdk.ts:9:1)",
+              "Module._compile (internal/modules/cjs/loader.js:1063:30)",
+              "Module.m._compile (/Users/scottlwk/Github/container-security-devsecops/node_modules/ts-node/src/index.ts:858:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:1092:10)",
+              "Object.require.extensions.<computed> [as .ts] (/Users/scottlwk/Github/container-security-devsecops/node_modules/ts-node/src/index.ts:861:12)",
+              "Module.load (internal/modules/cjs/loader.js:928:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:769:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:72:12)",
+              "main (/Users/scottlwk/Github/container-security-devsecops/node_modules/ts-node/src/bin.ts:227:14)",
+              "Object.<anonymous> (/Users/scottlwk/Github/container-security-devsecops/node_modules/ts-node/src/bin.ts:513:3)",
+              "Module._compile (internal/modules/cjs/loader.js:1063:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:1092:10)",
+              "Module.load (internal/modules/cjs/loader.js:928:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:769:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:72:12)",
+              "internal/main/run_main_module.js:17:47"
+            ]
+          }
+        ],
+        "/ContainerDevSecOpsStack/EcrRepositoryUri": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "EcrRepositoryUri",
+            "trace": [
+              "new PipelineStack (/Users/scottlwk/Github/container-security-devsecops/lib/pipeline-stack.ts:178:5)",
+              "Object.<anonymous> (/Users/scottlwk/Github/container-security-devsecops/bin/cdk.ts:9:1)",
+              "Module._compile (internal/modules/cjs/loader.js:1063:30)",
+              "Module.m._compile (/Users/scottlwk/Github/container-security-devsecops/node_modules/ts-node/src/index.ts:858:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:1092:10)",
+              "Object.require.extensions.<computed> [as .ts] (/Users/scottlwk/Github/container-security-devsecops/node_modules/ts-node/src/index.ts:861:12)",
+              "Module.load (internal/modules/cjs/loader.js:928:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:769:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:72:12)",
+              "main (/Users/scottlwk/Github/container-security-devsecops/node_modules/ts-node/src/bin.ts:227:14)",
+              "Object.<anonymous> (/Users/scottlwk/Github/container-security-devsecops/node_modules/ts-node/src/bin.ts:513:3)",
+              "Module._compile (internal/modules/cjs/loader.js:1063:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:1092:10)",
+              "Module.load (internal/modules/cjs/loader.js:928:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:769:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:72:12)",
+              "internal/main/run_main_module.js:17:47"
+            ]
+          }
+        ],
+        "/ContainerDevSecOpsStack/CDKMetadata/Default": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CDKMetadata",
+            "trace": [
+              "new MetadataResource (/Users/scottlwk/Github/container-security-devsecops/node_modules/@aws-cdk/core/lib/private/metadata-resource.ts:22:24)",
+              "/Users/scottlwk/Github/container-security-devsecops/node_modules/@aws-cdk/core/lib/private/synthesis.ts:166:5",
+              "visit (/Users/scottlwk/Github/container-security-devsecops/node_modules/@aws-cdk/core/lib/private/synthesis.ts:231:5)",
+              "visit (/Users/scottlwk/Github/container-security-devsecops/node_modules/@aws-cdk/core/lib/private/synthesis.ts:227:5)",
+              "injectMetadataResources (/Users/scottlwk/Github/container-security-devsecops/node_modules/@aws-cdk/core/lib/private/synthesis.ts:157:3)",
+              "Object.synthesize (/Users/scottlwk/Github/container-security-devsecops/node_modules/@aws-cdk/core/lib/private/synthesis.ts:18:3)",
+              "App.synth (/Users/scottlwk/Github/container-security-devsecops/node_modules/@aws-cdk/core/lib/stage.ts:94:23)",
+              "Object.<anonymous> (/Users/scottlwk/Github/container-security-devsecops/bin/cdk.ts:18:5)",
+              "Module._compile (internal/modules/cjs/loader.js:1063:30)",
+              "Module.m._compile (/Users/scottlwk/Github/container-security-devsecops/node_modules/ts-node/src/index.ts:858:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:1092:10)",
+              "Object.require.extensions.<computed> [as .ts] (/Users/scottlwk/Github/container-security-devsecops/node_modules/ts-node/src/index.ts:861:12)",
+              "Module.load (internal/modules/cjs/loader.js:928:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:769:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:72:12)",
+              "main (/Users/scottlwk/Github/container-security-devsecops/node_modules/ts-node/src/bin.ts:227:14)",
+              "Object.<anonymous> (/Users/scottlwk/Github/container-security-devsecops/node_modules/ts-node/src/bin.ts:513:3)",
+              "Module._compile (internal/modules/cjs/loader.js:1063:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:1092:10)",
+              "Module.load (internal/modules/cjs/loader.js:928:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:769:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:72:12)",
+              "internal/main/run_main_module.js:17:47"
+            ]
+          }
+        ]
+      },
+      "displayName": "ContainerDevSecOpsStack"
+    }
+  }
+}
